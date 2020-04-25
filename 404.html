@@ -85,7 +85,7 @@
 				pathArray.splice(0, 1);
 			}
 
-			if (pathArray[0] == 'fcc.io') {
+			if (pathArray[0] == 'fccid.link') {
 				pathArray.splice(0, 1);
 			}
 
@@ -99,15 +99,10 @@
 					// Error handling
 					;
 				}
-				// Check user settings for where to forward request
-				if (localStorage.getItem("provider") === "fccid.io") {
-				//if (localStorage.getItem("provider") === null) {
-					window.location.href = "http://fccid.io/" + pathArray[0];
-				} else {
-					document.getElementById('grantee_code').value = pathArray[0].substring(0, app_len);
-					document.getElementById('product_code').value = pathArray[0].substring(app_len);
-					document.getElementById('fcc_form').submit();
-				}
+				document.getElementById('grantee_code').value = pathArray[0].substring(0, app_len);
+				document.getElementById('product_code').value = pathArray[0].substring(app_len);
+				document.getElementById('fcc_form').submit();
+				
 			} else if (pathArray.length == 2 && pathArray[0] == 'grantee') {
 				document.getElementById('grantee_name').value = pathArray[1];
 				document.getElementById('grantee_form').submit();
